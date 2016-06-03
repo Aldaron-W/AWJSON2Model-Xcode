@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		335B095B1D017C340003543E /* AWJSON2Model.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 335B095A1D017C340003543E /* AWJSON2Model.xcscheme */; };
+		335B095E1D017C340003543E /* AWJSON2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 335B095D1D017C340003543E /* AWJSON2Model.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		335B09561D017C340003543E /* AWJSON2Model.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWJSON2Model.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		335B095A1D017C340003543E /* AWJSON2Model.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AWJSON2Model.xcscheme; path = AWJSON2Model.xcodeproj/xcshareddata/xcschemes/AWJSON2Model.xcscheme; sourceTree = SOURCE_ROOT; };
+		335B095C1D017C340003543E /* AWJSON2Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWJSON2Model.h; sourceTree = "<group>"; };
+		335B095D1D017C340003543E /* AWJSON2Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWJSON2Model.m; sourceTree = "<group>"; };
+		335B095F1D017C340003543E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		335B094E1D017C340003543E = {
+			isa = PBXGroup;
+			children = (
+				335B09581D017C340003543E /* AWJSON2Model */,
+				335B09571D017C340003543E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		335B09571D017C340003543E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				335B09561D017C340003543E /* AWJSON2Model.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		335B09581D017C340003543E /* AWJSON2Model */ = {
+			isa = PBXGroup;
+			children = (
+				335B095C1D017C340003543E /* AWJSON2Model.h */,
+				335B095D1D017C340003543E /* AWJSON2Model.m */,
+				335B095F1D017C340003543E /* Info.plist */,
+				335B09591D017C340003543E /* Supporting Files */,
+			);
+			path = AWJSON2Model;
+			sourceTree = "<group>";
+		};
+		335B09591D017C340003543E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				335B095A1D017C340003543E /* AWJSON2Model.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		335B09551D017C340003543E /* AWJSON2Model */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335B09621D017C340003543E /* Build configuration list for PBXNativeTarget "AWJSON2Model" */;
+			buildPhases = (
+				335B09531D017C340003543E /* Sources */,
+				335B09541D017C340003543E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AWJSON2Model;
+			productName = AWJSON2Model;
+			productReference = 335B09561D017C340003543E /* AWJSON2Model.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		335B094F1D017C340003543E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Aldaron;
+				TargetAttributes = {
+					335B09551D017C340003543E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 335B09521D017C340003543E /* Build configuration list for PBXProject "AWJSON2Model" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 335B094E1D017C340003543E;
+			productRefGroup = 335B09571D017C340003543E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				335B09551D017C340003543E /* AWJSON2Model */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		335B09541D017C340003543E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335B095B1D017C340003543E /* AWJSON2Model.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		335B09531D017C340003543E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335B095E1D017C340003543E /* AWJSON2Model.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		335B09601D017C340003543E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		335B09611D017C340003543E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		335B09631D017C340003543E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = AWJSON2Model/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.Aldaron.www.AWJSON2Model;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		335B09641D017C340003543E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = AWJSON2Model/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.Aldaron.www.AWJSON2Model;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		335B09521D017C340003543E /* Build configuration list for PBXProject "AWJSON2Model" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335B09601D017C340003543E /* Debug */,
+				335B09611D017C340003543E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		335B09621D017C340003543E /* Build configuration list for PBXNativeTarget "AWJSON2Model" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335B09631D017C340003543E /* Debug */,
+				335B09641D017C340003543E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 335B094F1D017C340003543E /* Project object */;
+}
