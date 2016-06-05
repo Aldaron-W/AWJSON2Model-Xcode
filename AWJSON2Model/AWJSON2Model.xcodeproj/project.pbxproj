@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		335B095B1D017C340003543E /* AWJSON2Model.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 335B095A1D017C340003543E /* AWJSON2Model.xcscheme */; };
 		335B095E1D017C340003543E /* AWJSON2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 335B095D1D017C340003543E /* AWJSON2Model.m */; };
+		96B7DD8D1D045CD300B3BF9E /* AWJ2PController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B7DD8B1D045CD300B3BF9E /* AWJ2PController.m */; };
+		96B7DD8E1D045CD300B3BF9E /* AWJ2PController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B7DD8C1D045CD300B3BF9E /* AWJ2PController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +19,9 @@
 		335B095C1D017C340003543E /* AWJSON2Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWJSON2Model.h; sourceTree = "<group>"; };
 		335B095D1D017C340003543E /* AWJSON2Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWJSON2Model.m; sourceTree = "<group>"; };
 		335B095F1D017C340003543E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96B7DD8A1D045CD300B3BF9E /* AWJ2PController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWJ2PController.h; path = ViewControllers/AWJ2PController.h; sourceTree = "<group>"; };
+		96B7DD8B1D045CD300B3BF9E /* AWJ2PController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWJ2PController.m; path = ViewControllers/AWJ2PController.m; sourceTree = "<group>"; };
+		96B7DD8C1D045CD300B3BF9E /* AWJ2PController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AWJ2PController.xib; path = ViewControllers/AWJ2PController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -43,6 +48,7 @@
 				335B095D1D017C340003543E /* AWJSON2Model.m */,
 				335B095F1D017C340003543E /* Info.plist */,
 				335B09591D017C340003543E /* Supporting Files */,
+				96B7DD841D045B3D00B3BF9E /* ViewControllers */,
 			);
 			path = AWJSON2Model;
 			sourceTree = "<group>";
@@ -53,6 +59,16 @@
 				335B095A1D017C340003543E /* AWJSON2Model.xcscheme */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96B7DD841D045B3D00B3BF9E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				96B7DD8A1D045CD300B3BF9E /* AWJ2PController.h */,
+				96B7DD8B1D045CD300B3BF9E /* AWJ2PController.m */,
+				96B7DD8C1D045CD300B3BF9E /* AWJ2PController.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +96,9 @@
 		335B094F1D017C340003543E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					"取消按钮",
+				);
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Aldaron;
 				TargetAttributes = {
@@ -110,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B7DD8E1D045CD300B3BF9E /* AWJ2PController.xib in Resources */,
 				335B095B1D017C340003543E /* AWJSON2Model.xcscheme in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B7DD8D1D045CD300B3BF9E /* AWJ2PController.m in Sources */,
 				335B095E1D017C340003543E /* AWJSON2Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +277,7 @@
 				335B09641D017C340003543E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
