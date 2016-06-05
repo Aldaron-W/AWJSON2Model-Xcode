@@ -7,8 +7,15 @@
 //
 
 #import "AWJSON2Model.h"
+#import "AWJ2PController.h"
 
 static AWJSON2Model *sharedPlugin;
+
+@interface AWJSON2Model ()
+
+@property (nonatomic, strong) AWJ2PController *j2pController;
+
+@end
 
 @implementation AWJSON2Model
 
@@ -65,17 +72,42 @@ static AWJSON2Model *sharedPlugin;
 {
     // Create menu items, initialize UI, etc.
     // Sample Menu Item:
-    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
+//    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
+//    if (menuItem) {
+//        [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
+//        NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
+//        //[actionMenuItem setKeyEquivalentModifierMask:NSAlphaShiftKeyMask | NSControlKeyMask];
+//        [actionMenuItem setTarget:self];
+//        [[menuItem submenu] addItem:actionMenuItem];
+//        return YES;
+//    } else {
+//        return NO;
+//    }
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidFinishLaunchingNotification object:nil];
+    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Window"];
     if (menuItem) {
-        [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-        NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
-        //[actionMenuItem setKeyEquivalentModifierMask:NSAlphaShiftKeyMask | NSControlKeyMask];
-        [actionMenuItem setTarget:self];
-        [[menuItem submenu] addItem:actionMenuItem];
+        
+        NSMenu *menu = [[NSMenu alloc] init];
+        
+        //AW JSON to Property window
+        NSMenuItem *inputJsonWindow = [[NSMenuItem alloc] initWithTitle:@"AW JSON to Property window" action:@selector(showJ2PWindow:) keyEquivalent:@"J"];
+        [inputJsonWindow setKeyEquivalentModifierMask:NSAlphaShiftKeyMask | NSControlKeyMask];
+        inputJsonWindow.target = self;
+        [menu addItem:inputJsonWindow];
+        
+        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"AWJSON2Model" action:nil keyEquivalent:@""];
+        item.submenu = menu;
+        
+        [[menuItem submenu] addItem:item];
         return YES;
-    } else {
-        return NO;
     }
+    return NO;
+}
+
+- (void)showJ2PWindow:(NSMenuItem *)item{
+    self.j2pController = [[AWJ2PController alloc] initWithWindowNibName:@"AWJ2PController"];
+    [self.j2pController showWindow:self.j2pController];
 }
 
 // Sample Action, for menu item:
