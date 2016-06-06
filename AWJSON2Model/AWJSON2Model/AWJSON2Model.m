@@ -91,6 +91,7 @@ static AWJSON2Model *sharedPlugin;
         NSMenu *menu = [[NSMenu alloc] init];
         
         //AW JSON to Property window
+        //展现JSON转换为Property的界面
         NSMenuItem *inputJsonWindow = [[NSMenuItem alloc] initWithTitle:@"AW JSON to Property window" action:@selector(showJ2PWindow:) keyEquivalent:@"J"];
         [inputJsonWindow setKeyEquivalentModifierMask:NSAlphaShiftKeyMask | NSControlKeyMask];
         inputJsonWindow.target = self;
@@ -105,6 +106,11 @@ static AWJSON2Model *sharedPlugin;
     return NO;
 }
 
+/**
+ *  展现JSON转换为Property的界面
+ *
+ *  @param item 点击目录的按钮Item
+ */
 - (void)showJ2PWindow:(NSMenuItem *)item{
     self.j2pController = [[AWJ2PController alloc] initWithWindowNibName:@"AWJ2PController"];
     [self.j2pController showWindow:self.j2pController];

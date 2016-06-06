@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332845B81D05217800507C5D /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 332845B71D05217800507C5D /* NSString+JSON.m */; };
 		335B095B1D017C340003543E /* AWJSON2Model.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 335B095A1D017C340003543E /* AWJSON2Model.xcscheme */; };
 		335B095E1D017C340003543E /* AWJSON2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 335B095D1D017C340003543E /* AWJSON2Model.m */; };
 		96B7DD8D1D045CD300B3BF9E /* AWJ2PController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B7DD8B1D045CD300B3BF9E /* AWJ2PController.m */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		332845B61D05217800507C5D /* NSString+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+JSON.h"; path = "Categories/NSString+JSON.h"; sourceTree = "<group>"; };
+		332845B71D05217800507C5D /* NSString+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+JSON.m"; path = "Categories/NSString+JSON.m"; sourceTree = "<group>"; };
 		335B09561D017C340003543E /* AWJSON2Model.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWJSON2Model.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		335B095A1D017C340003543E /* AWJSON2Model.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AWJSON2Model.xcscheme; path = AWJSON2Model.xcodeproj/xcshareddata/xcschemes/AWJSON2Model.xcscheme; sourceTree = SOURCE_ROOT; };
 		335B095C1D017C340003543E /* AWJSON2Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWJSON2Model.h; sourceTree = "<group>"; };
@@ -25,6 +28,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		332845B91D05217B00507C5D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				332845B61D05217800507C5D /* NSString+JSON.h */,
+				332845B71D05217800507C5D /* NSString+JSON.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		335B094E1D017C340003543E = {
 			isa = PBXGroup;
 			children = (
@@ -49,6 +61,7 @@
 				335B095F1D017C340003543E /* Info.plist */,
 				335B09591D017C340003543E /* Supporting Files */,
 				96B7DD841D045B3D00B3BF9E /* ViewControllers */,
+				332845B91D05217B00507C5D /* Categories */,
 			);
 			path = AWJSON2Model;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B7DD8D1D045CD300B3BF9E /* AWJ2PController.m in Sources */,
+				332845B81D05217800507C5D /* NSString+JSON.m in Sources */,
 				335B095E1D017C340003543E /* AWJSON2Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
