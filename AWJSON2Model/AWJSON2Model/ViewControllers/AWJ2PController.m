@@ -10,9 +10,11 @@
 #import "NSString+JSON.h"
 #import "ParsePropertyManager.h"
 
-@interface AWJ2PController ()
+@interface AWJ2PController ()<NSOutlineViewDelegate, NSOutlineViewDataSource>
 @property (unsafe_unretained) IBOutlet NSTextView *resultView;
 @property (unsafe_unretained) IBOutlet NSTextView *jsonInputView;
+@property (weak) IBOutlet NSClipView *jsonOutlineView;
+
 @property (weak) IBOutlet NSButton *biuBtn;
 @property (weak) IBOutlet NSButton *cancelBtn;
 
@@ -56,5 +58,10 @@
         NSLog(@"%@", error);
     }
 }
+
+#pragma mark - Outline View
+//- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item{
+//    
+//}
 
 @end

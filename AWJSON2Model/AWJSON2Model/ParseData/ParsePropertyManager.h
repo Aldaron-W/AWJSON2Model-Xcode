@@ -8,6 +8,37 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ Test Content
+ 
+ {
+	"number": 0.0,
+ "int": 0,
+	"string": "string",
+	"array": [
+ {
+ "key1" : "value1",
+ "key2" : "value2",
+ "key3" : "value3",
+ },
+ {
+ "key1" : "value1",
+ "key2" : "value2",
+ "key3" : "value3",
+ },
+ "ArraySubString",
+ 0.0,
+ ],
+	"dictionary": {
+ "key1" : "value1",
+ "key2" : "value2",
+ "key3" : "value3",
+	},
+ "NULL" : null,
+ "BOOL" : true,
+ }
+ */
+
 @interface ParsePropertyManager : NSObject
 
 /**

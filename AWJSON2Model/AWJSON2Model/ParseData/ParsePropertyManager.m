@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Aldaron. All rights reserved.
 //
 
+#import <objc/runtime.h>
 #import "ParsePropertyManager.h"
 
 @implementation ParsePropertyManager
@@ -71,8 +72,22 @@
         typeStr = @"id";
         return [NSString stringWithFormat:@"@property (nonatomic, %@) %@ *%@;",qualifierStr,typeStr,key];
     }
+    else if ([value isKindOfClass:[NSNull class]]){
+        
+    }
     return [NSString stringWithFormat:@"@property (nonatomic, %@) %@ *%@;",qualifierStr,typeStr,key];
 }
 
+- (Class)checkClassWithClassName:(NSString *)className error:(NSError *)error{
+    Class class = NSClassFromString(className);
+    
+    if (class) {
+        return class;
+    }
+    else{
+        error = [NSError errorWithDomain:@"AWJSON2Model.error" code:-1 userInfo:@{@"Error":@"Don't have any class with this name."}];
+        return nil;
+    }
+}
 
 @end
