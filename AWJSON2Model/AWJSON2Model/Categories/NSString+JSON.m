@@ -15,31 +15,28 @@
  *
  *	@return	NSArray or NSDictionary
  */
-- (id)jsonObjectWithError:(NSError **)error
-{
+- (id)jsonObjectWithError:(NSError **)error{
     return [NSString parseJsonString:self error:error];
 }
+
 /**
  *	parse sender to mutable json object
  *
  *	@return	NSMutableArray or NSMutableDictionary
  */
-- (id)jsonMutableObjectWithError:(NSError **)error
-{
+- (id)jsonMutableObjectWithError:(NSError **)error{
     return [NSString mutableParseJsonString:self error:error];
 }
 
-+ (id)mutableParseJsonData:(NSData*)data error:(NSError **)error
-{
++ (id)mutableParseJsonData:(NSData*)data error:(NSError **)error{
     return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:error];
 }
-+ (id)mutableParseJsonString:(NSString*)jsonStr error:(NSError **)error
-{
+
++ (id)mutableParseJsonString:(NSString*)jsonStr error:(NSError **)error{
     return [self mutableParseJsonData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding] error:error];
 }
 
-+ (id)parseJsonData:(NSData*)data error:(NSError **)error
-{
++ (id)parseJsonData:(NSData*)data error:(NSError **)error{
     if (data)
     {
         return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:error];
@@ -48,18 +45,15 @@
     return nil;
 }
 
-+ (id)parseJsonString:(NSString *)jsonStr error:(NSError **)error
-{
++ (id)parseJsonString:(NSString *)jsonStr error:(NSError **)error{
     return [self parseJsonData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding] error:error];
 }
 
-+ (NSData*)dataEncodingJsonObject:(id)obj
-{
++ (NSData*)dataEncodingJsonObject:(id)obj{
     return [NSJSONSerialization dataWithJSONObject:obj options:kNilOptions error:nil];
 }
 
-+ (NSString*)stringEncodingJsonObject:(id)obj
-{
++ (NSString*)stringEncodingJsonObject:(id)obj{
     if (!obj)
     {
         return nil;

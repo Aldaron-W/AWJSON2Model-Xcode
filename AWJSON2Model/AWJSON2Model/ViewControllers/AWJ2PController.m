@@ -8,8 +8,10 @@
 
 #import "AWJ2PController.h"
 #import "NSString+JSON.h"
+#import "ParsePropertyManager.h"
 
 @interface AWJ2PController ()
+@property (unsafe_unretained) IBOutlet NSTextView *resultView;
 @property (unsafe_unretained) IBOutlet NSTextView *jsonInputView;
 @property (weak) IBOutlet NSButton *biuBtn;
 @property (weak) IBOutlet NSButton *cancelBtn;
@@ -39,11 +41,18 @@
     
     NSString *jsonText = textView.string;
     NSError *error = nil;
-    id jsonObject = [jsonText jsonObjectWithError:&error];
+    NSDictionary *jsonObject = [jsonText jsonObjectWithError:&error];
     if (!error) {
-        NSLog(@"%@", jsonObject);
+        NSMutableString *resultStr = [NSMutableString string];
+        [jsonObject enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            [resultStr appendFormat:@"\n%@\n",[ParsePropertyManager formatObjcWithKey:key value:obj]];
+        }];
+        
+        [_resultView setString:resultStr];
+        NSLog(@"%@", resultStr);
     }
     else{
+        [_resultView setString:[error description]];
         NSLog(@"%@", error);
     }
 }

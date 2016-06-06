@@ -10,6 +10,7 @@
                 <outlet property="biuBtn" destination="GPl-2m-laa" id="SmK-f4-pST"/>
                 <outlet property="cancelBtn" destination="oPQ-Bx-oeU" id="5Li-ij-CKq"/>
                 <outlet property="jsonInputView" destination="GjM-OC-Bka" id="Dfc-cM-s0C"/>
+                <outlet property="resultView" destination="GoG-Xd-qvg" id="Yt9-W9-9ti"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -19,7 +20,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="546" height="554"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="546" height="554"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -79,9 +80,45 @@
                                                         <constraint firstItem="a2b-Zq-a7V" firstAttribute="centerX" secondItem="m7l-Tj-9fH" secondAttribute="centerX" id="avx-yU-QLv"/>
                                                     </constraints>
                                                 </customView>
-                                                <customView fixedFrame="YES" id="dTR-WY-27a">
+                                                <customView id="dTR-WY-27a">
                                                     <rect key="frame" x="280" y="0.0" width="266" height="534"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VP-yk-JDb">
+                                                            <rect key="frame" x="0.0" y="0.0" width="266" height="534"/>
+                                                            <clipView key="contentView" id="3BF-k0-PsF">
+                                                                <rect key="frame" x="1" y="1" width="249" height="532"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="GoG-Xd-qvg">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="249" height="532"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <size key="minSize" width="249" height="532"/>
+                                                                        <size key="maxSize" width="463" height="10000000"/>
+                                                                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <size key="minSize" width="249" height="532"/>
+                                                                        <size key="maxSize" width="463" height="10000000"/>
+                                                                    </textView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </clipView>
+                                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="cqG-7c-J83">
+                                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="P3H-p6-58G">
+                                                                <rect key="frame" x="250" y="1" width="15" height="532"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                        </scrollView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="9VP-yk-JDb" firstAttribute="height" secondItem="dTR-WY-27a" secondAttribute="height" id="8q1-0t-rmB"/>
+                                                        <constraint firstItem="9VP-yk-JDb" firstAttribute="centerY" secondItem="dTR-WY-27a" secondAttribute="centerY" id="Jv9-xW-Le5"/>
+                                                        <constraint firstItem="9VP-yk-JDb" firstAttribute="width" secondItem="dTR-WY-27a" secondAttribute="width" id="YoR-n0-c1y"/>
+                                                        <constraint firstItem="9VP-yk-JDb" firstAttribute="centerX" secondItem="dTR-WY-27a" secondAttribute="centerX" id="jqF-Rg-bQp"/>
+                                                    </constraints>
                                                 </customView>
                                             </subviews>
                                             <holdingPriorities>
@@ -147,7 +184,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="315" y="376"/>
+            <point key="canvasLocation" x="-105" y="393"/>
         </window>
     </objects>
 </document>
