@@ -27,34 +27,40 @@ typedef NS_ENUM (NSUInteger, AWNSType) {
     AWNSTypeNSMutableDictionary,
     AWNSTypeNSSet,
     AWNSTypeNSMutableSet,
+    AWNSTypeBOOL,
+    AWNSTypeNSNull,
 };
 
 @implementation ParsePropertyManager
 
 + (AWNSType)getPropertyNSType:(Class)class{
     
-        if (!class) return AWNSTypeNSUnknown;
-        if ([class isSubclassOfClass:[NSMutableString class]]) return AWNSTypeNSMutableString;
-        if ([class isSubclassOfClass:[NSString class]]) return AWNSTypeNSString;
-        if ([class isSubclassOfClass:[NSDecimalNumber class]]) return AWNSTypeNSDecimalNumber;
-        if ([class isSubclassOfClass:[NSNumber class]]) return AWNSTypeNSNumber;
-        if ([class isSubclassOfClass:[NSValue class]]) return AWNSTypeNSValue;
-        if ([class isSubclassOfClass:[NSMutableData class]]) return AWNSTypeNSMutableData;
-        if ([class isSubclassOfClass:[NSData class]]) return AWNSTypeNSData;
-        if ([class isSubclassOfClass:[NSDate class]]) return AWNSTypeNSDate;
-        if ([class isSubclassOfClass:[NSURL class]]) return AWNSTypeNSURL;
-        if ([class isSubclassOfClass:[NSMutableArray class]]) return AWNSTypeNSMutableArray;
-        if ([class isSubclassOfClass:[NSArray class]]) return AWNSTypeNSArray;
-        if ([class isSubclassOfClass:[NSMutableDictionary class]]) return AWNSTypeNSMutableDictionary;
-        if ([class isSubclassOfClass:[NSDictionary class]]) return AWNSTypeNSDictionary;
-        if ([class isSubclassOfClass:[NSMutableSet class]]) return AWNSTypeNSMutableSet;
-        if ([class isSubclassOfClass:[NSSet class]]) return AWNSTypeNSSet;
+    if (!class) return AWNSTypeNSUnknown;
+    if ([class isSubclassOfClass:[@(YES) class]]) return AWNSTypeBOOL;
+    if ([class isSubclassOfClass:[NSNull class]]) return AWNSTypeNSNull;
+    if ([class isSubclassOfClass:[NSMutableString class]]) return AWNSTypeNSMutableString;
+    if ([class isSubclassOfClass:[NSString class]]) return AWNSTypeNSString;
+    if ([class isSubclassOfClass:[NSDecimalNumber class]]) return AWNSTypeNSDecimalNumber;
+    if ([class isSubclassOfClass:[NSNumber class]]) return AWNSTypeNSNumber;
+    if ([class isSubclassOfClass:[NSValue class]]) return AWNSTypeNSValue;
+    if ([class isSubclassOfClass:[NSMutableData class]]) return AWNSTypeNSMutableData;
+    if ([class isSubclassOfClass:[NSData class]]) return AWNSTypeNSData;
+    if ([class isSubclassOfClass:[NSDate class]]) return AWNSTypeNSDate;
+    if ([class isSubclassOfClass:[NSURL class]]) return AWNSTypeNSURL;
+    if ([class isSubclassOfClass:[NSMutableArray class]]) return AWNSTypeNSMutableArray;
+    if ([class isSubclassOfClass:[NSArray class]]) return AWNSTypeNSArray;
+    if ([class isSubclassOfClass:[NSMutableDictionary class]]) return AWNSTypeNSMutableDictionary;
+    if ([class isSubclassOfClass:[NSDictionary class]]) return AWNSTypeNSDictionary;
+    if ([class isSubclassOfClass:[NSMutableSet class]]) return AWNSTypeNSMutableSet;
+    if ([class isSubclassOfClass:[NSSet class]]) return AWNSTypeNSSet;
     return AWNSTypeNSUnknown;
 }
 
 + (AWNSType)getPropertyNSTypeForJSON:(Class)class{
     
     if (!class) return AWNSTypeNSUnknown;
+    if ([class isSubclassOfClass:[@(YES) class]]) return AWNSTypeBOOL;
+    if ([class isSubclassOfClass:[NSNull class]]) return AWNSTypeNSNull;
     if ([class isSubclassOfClass:[NSMutableString class]]) return AWNSTypeNSMutableString;
     if ([class isSubclassOfClass:[NSString class]]) return AWNSTypeNSString;
     if ([class isSubclassOfClass:[NSDecimalNumber class]]) return AWNSTypeNSDecimalNumber;
@@ -83,7 +89,7 @@ typedef NS_ENUM (NSUInteger, AWNSType) {
         case AWNSTypeNSString:
         case AWNSTypeNSMutableString:{
             qualifierStr = @"copy";
-            typeStr = @"NSString";
+            typeStr = @"NSString *";
         }
             break;
         case AWNSTypeNSNumber:
@@ -91,86 +97,54 @@ typedef NS_ENUM (NSUInteger, AWNSType) {
             qualifierStr = @"assign";
             
             NSNumber *valueNumber = (NSNumber *)value;
-            if([valueNumber intValue] == [valueNumber longValue]){
+            if([valueNumber intValue] == [valueNumber doubleValue]){
                 if ([valueNumber longLongValue] < NSIntegerMax && [valueNumber longLongValue] > NSIntegerMin) {
-                    typeStr = @"NSInteger";
+                    typeStr = @"NSInteger ";
                 }
-                else if ([valueNumber longLongValue] < )
+                else{
+                    typeStr = @"long long ";
+                }
                 
             }else{
                 if([valueNumber doubleValue] < CGFLOAT_MAX && [valueNumber doubleValue] > CGFLOAT_MIN) {
-                    typeStr = @"CGFloat";
+                    typeStr = @"CGFloat ";
                 }
                 else{
-                    typeStr = @"double";
+                    typeStr = @"double ";
                 }
             }
-                
-//            }else{
-//                NSNumber *valueNumber = (NSNumber *)value;
-//                if ([valueNumber longValue]<NSIntegerMax) {
-//                    typeStr = @"NSInteger";
-//                }else{
-//                    typeStr = @"long long";
-//                }
-//            }
-            
+            break;
+        }
+        case AWNSTypeNSArray:
+        case AWNSTypeNSMutableArray:{
+            //TODO:支持泛型集合
+            qualifierStr = @"strong";
+            typeStr = @"NSArray *";
+            break;
+        }
+        case AWNSTypeNSDictionary:
+        case AWNSTypeNSMutableDictionary:{
+            //TODO:支持泛型集合
+            //TODO:支持解析为其他类数据
+            qualifierStr = @"strong";
+            typeStr = @"NSDictionary *";
+            break;
+        }
+        case AWNSTypeBOOL:{
+            qualifierStr = @"assign";
+            typeStr = @"BOOL ";
+            break;
+        }
+        case AWNSTypeNSNull:{
+            qualifierStr = @"strong";
+            typeStr = @"id ";
+            break;
         }
         default:
             break;
     }
     
-    //NSString
-    if ([value isKindOfClass:[NSString class]]) {
-        qualifierStr = @"copy";
-        typeStr = @"NSString";
-    }else if([value isKindOfClass:[@(YES) class]]){
-        //YES or NO
-        //the 'NSCFBoolean' is private subclass of 'NSNumber'
-        qualifierStr = @"assign";
-        typeStr = @"BOOL";
-    }else if([value isKindOfClass:[NSNumber class]]){
-        //NSNumber
-        qualifierStr = @"assign";
-        NSString *valueStr = [NSString stringWithFormat:@"%@",value];
-        if ([valueStr rangeOfString:@"."].location!=NSNotFound){
-            typeStr = @"CGFloat";
-        }else{
-            NSNumber *valueNumber = (NSNumber *)value;
-            if ([valueNumber longValue]<NSIntegerMax) {
-                typeStr = @"NSInteger";
-            }else{
-                typeStr = @"long long";
-            }
-        }
-        return [NSString stringWithFormat:@"@property (nonatomic, %@) %@ %@;",qualifierStr,typeStr,key];
-    }else if([value isKindOfClass:[NSArray class]]){
-        NSArray *array = (NSArray *)value;
-        
-        //May be 'NSString'，will crash
-        NSString *genericTypeStr = @"";
-        NSObject *firstObj = [array firstObject];
-        if ([firstObj isKindOfClass:[NSDictionary class]]) {
-            genericTypeStr = [NSString stringWithFormat:@"<%@ *>",key];
-        }else if ([firstObj isKindOfClass:[NSString class]]){
-            genericTypeStr = @"<NSString *>";
-        }else if ([firstObj isKindOfClass:[NSNumber class]]){
-            genericTypeStr = @"<NSNumber *>";
-        }
-        
-        qualifierStr = @"strong";
-        typeStr = @"NSArray";
-        return [NSString stringWithFormat:@"@property (nonatomic, %@) %@ *%@;",qualifierStr,typeStr,key];
-    }else if ([value isKindOfClass:[NSDictionary class]]){
-        //NSDictionary
-        qualifierStr = @"strong";
-        typeStr = @"id";
-        return [NSString stringWithFormat:@"@property (nonatomic, %@) %@ *%@;",qualifierStr,typeStr,key];
-    }
-    else if ([value isKindOfClass:[NSNull class]]){
-        
-    }
-    return [NSString stringWithFormat:@"@property (nonatomic, %@) %@ *%@;",qualifierStr,typeStr,key];
+    return [NSString stringWithFormat:@"@property (nonatomic, %@) %@%@;",qualifierStr,typeStr,key];
 }
 
 - (Class)checkClassWithClassName:(NSString *)className error:(NSError *)error{
